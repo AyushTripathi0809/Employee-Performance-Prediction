@@ -1,0 +1,17 @@
+# Data Science & Machine Learning
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+scipy
+xgboost
+
+# Web Application
+Flask
+
+# Notebook Environment
+jupyter
+
+# For Deployment
+gunicorn

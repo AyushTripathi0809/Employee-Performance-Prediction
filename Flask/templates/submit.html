@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo">Employee Productivity Prediction</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/predict_page">Predict</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="result">
+            <h2>Predicted Productivity Score: {{ prediction_text }}</h2>
+        </div>
+        {% if plot_url %}
+        <div style="margin-top: 2rem; border: 1px solid #333; border-radius: 8px; padding: 1rem; background: #1f1f1f; text-align: center;">
+            <h3>Input Data Snapshot</h3>
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Input Data Plot" style="max-width: 100%;">
+        </div>
+        {% endif %}
+        <a href="/predict_page"><button style="margin-top: 2rem;">Make Another Prediction</button></a>
+    </div>
+</body>
+</html>

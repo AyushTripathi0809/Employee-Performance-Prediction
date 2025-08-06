@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Productivity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo">Employee Productivity Prediction</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/predict_page">Predict</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Enter All Employee Data</h1>
+        <form action="/predict" method="post">
+            <input type="text" name="day" placeholder="Day of the month (e.g., 7)" required />
+            <input type="text" name="quarter" placeholder="Quarter (e.g., 2)" required />
+            <input type="text" name="department" placeholder="Department (sewing or finishing)" required />
+            <input type="text" name="team" placeholder="Team Number (e.g., 5)" required />
+            <input type="text" name="targeted_productivity" placeholder="Targeted Productivity (e.g., 0.8)" required />
+            <input type="text" name="smv" placeholder="Standard Minute Value (e.g., 20.0)" required />
+            <input type="text" name="wip" placeholder="Work in Progress (e.g., 700)" required />
+            <input type="text" name="over_time" placeholder="Over Time (minutes)" required />
+            <input type="text" name="incentive" placeholder="Incentive (e.g., 50)" required />
+            <input type="text" name="idle_time" placeholder="Idle Time (e.g., 0)" required />
+            <input type="text" name="idle_men" placeholder="Idle Men (e.g., 0)" required />
+            <input type="text" name="no_of_style_change" placeholder="No. of Style Changes (e.g., 0)" required />
+            <input type="text" name="no_of_workers" placeholder="Number of Workers (e.g., 50)" required />
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo">Employee Productivity Prediction</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/predict_page">Predict</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Employee Performance Analysis: A Predictive Approach</h1>
+        <p>
+            Effective management begins with a deep understanding of workforce dynamics. This project provides a robust framework for employee performance analysis, moving beyond traditional reports to deliver forward-looking insights. By applying a machine learning model to key operational data, we can forecast productivity trends and identify the primary factors that influence efficiency. The goal is to equip decision-makers with the predictive tools necessary to optimize team performance and foster sustainable growth.
+        </p>
+        <a href="/predict_page"><button>Begin Analysis</button></a>
+    </div>
+</body>
+</html>

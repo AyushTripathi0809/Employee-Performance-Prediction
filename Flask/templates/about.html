@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo">Employee Productivity Prediction</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/predict_page">Predict</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+    <div class="container" style="text-align: left; max-width: 900px;">
+        <h1>About Me</h1>
+        <p>
+            Hello! I'm <strong>Ayush Tripathi</strong>, a data science practitioner dedicated to building intelligent systems that create business value. My expertise lies in the end-to-end development of machine learning solutions, from rigorous data analysis and feature engineering to deploying predictive models in interactive applications. I am driven by the challenge of transforming raw data into clear, strategic insights.
+        </p>
+        <br>
+        <h1>About the Project</h1>
+        <p>
+            This project presents a comprehensive solution for predicting employee productivity in the garment manufacturing industry. It demonstrates a full data science life cycle, beginning with an in-depth Exploratory Data Analysis (EDA) to uncover patterns in the source data.
+        </p>
+        <p>
+            A Random Forest Regressor, a powerful ensemble model, was selected and trained using Python's Scikit-learn library to achieve high predictive accuracy. The final, trained model is served through this interactive web interface, which was built using the Flask framework, allowing for real-time predictions based on user-defined inputs.
+        </p>
+    </div>
+</body>
+</html>
