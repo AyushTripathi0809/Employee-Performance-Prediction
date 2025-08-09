@@ -10,10 +10,8 @@ import base64
 # Create the Flask app
 app = Flask(__name__)
 
-# Load the trained machine learning model
+# Load the trained machine learning model and the column data
 model = pickle.load(open('model_rf.pkl', 'rb'))
-
-# Load the exact list of column names the model was trained on
 model_columns = pickle.load(open('model_columns.pkl', 'rb'))
 
 
@@ -73,6 +71,18 @@ def predict():
     prediction = model.predict(input_df_realigned)
     output_percentage = round(prediction[0] * 100, 2)
 
+    # Create a qualitative assessment message
+    if output_percentage >= 80:
+        assessment = "This employee is projected to be Highly Productive."
+    elif output_percentage >= 60:
+        assessment = "This employee is projected to have Good Productivity."
+    else:
+        assessment = "This employee's productivity may require attention."
+
+    # Combine assessment and score into one final string
+    final_prediction_text = f"{assessment} (Prediction Score: {output_percentage}%)"
+
+
     # --- Create the Visualization ---
     # Create a dictionary of only the numerical features for plotting
     numerical_features_for_plot = {k: v for k, v in form_data.items() if isinstance(v, (int, float))}
@@ -95,7 +105,7 @@ def predict():
     plot_url = base64.b64encode(img.getvalue()).decode()
     plt.close()
 
-    return render_template('submit.html', prediction_text=f'{output_percentage}%', plot_url=plot_url)
+    return render_template('submit.html', prediction_text=final_prediction_text, plot_url=plot_url)
 
 
 # This block runs the app when the script is executed
